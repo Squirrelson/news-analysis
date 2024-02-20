@@ -162,5 +162,5 @@ cython_debug/
 # Site specific details
 urls.json
 test.html
-news.json
+data/
 .DS_Store

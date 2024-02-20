@@ -13,13 +13,13 @@ class NewsSpider(scrapy.Spider):
     start_urls = data.get('start_url')
 
     def start_requests(self):
-        for page_no in range(1,50):
+        for page_no in range(1, 500):
             # Send a POST request with the custom payload
             yield scrapy.FormRequest(
                 url = self.start_urls[0],
                 formdata = {
                     'page_no': str(page_no),
-                    'search_txt': 'australia',
+                    'search_txt': 'canada',
                     # Add more key-value pairs as needed
                     },
                 callback = self.parse,
