@@ -10,3 +10,7 @@ class SearchScrapeItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     pass
+
+class ArticleItem(scrapy.Item):
+    url = scrapy.Field()
+    text = scrapy.Field()

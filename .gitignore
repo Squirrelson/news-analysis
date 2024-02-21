@@ -164,3 +164,4 @@ urls.json
 test.html
 data/
 .DS_Store
+test.*
