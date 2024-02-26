@@ -24,13 +24,23 @@ def sentiment_analyse(dataframe):
     return(dataframe)
 
 # Load and run on data
-test = pd.read_json('data/clean/test.json')
-test = sentiment_analyse(test)
+print("Analysing NZ")
+# NZ
+nz = pd.read_json('data/clean/nz.json')
+nz = sentiment_analyse(nz)
+print(nz.head())
+nz.to_json('data/sentiment/nz.json', orient='records', date_format='iso', default_handler=str)
 
-print(test.head())
+print("Analysing Australia")
+# Australia
+aus = pd.read_json('data/clean/aus.json')
+aus = sentiment_analyse(aus)
+print(aus.head())
+aus.to_json('data/sentiment/aus.json', orient='records', date_format='iso', default_handler=str)
 
-test.to_json('data/sentiment/test.json', orient='records', date_format='iso', default_handler=str)
-
-
-
-
+print("Analysing Canada")
+# Canada
+canada = pd.read_json('data/clean/canada.json')
+canada = sentiment_analyse(canada)
+print(canada.head())
+canada.to_json('data/sentiment/canada.json', orient='records', date_format='iso', default_handler=str)
