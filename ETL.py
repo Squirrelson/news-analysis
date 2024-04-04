@@ -48,11 +48,11 @@ aus_clean = clean_df(aus)
 aus_clean.to_json('data/clean/aus.json', orient='records', date_format='iso', default_handler=str)
 
 # New Zealand
-nz = pd.read_json('data/raw/nz.json')
-nz_clean = clean_df(nz)
-nz_clean.to_json('data/clean/nz.json', orient='records', date_format='iso', default_handler=str)
+# nz = pd.read_json('data/raw/nz.json')
+# nz_clean = clean_df(nz)
+# nz_clean.to_json('data/clean/nz.json', orient='records', date_format='iso', default_handler=str)
 
-# Canada
-canada = pd.read_json('data/raw/canada.json')
-canada_clean = clean_df(canada)
-canada_clean.to_json('data/clean/canada.json', orient='records', date_format='iso', default_handler=str)
+# # Canada
+# canada = pd.read_json('data/raw/canada.json')
+# canada_clean = clean_df(canada)
+# canada_clean.to_json('data/clean/canada.json', orient='records', date_format='iso', default_handler=str)
