@@ -71,7 +71,7 @@ plt.show()
 plt.plot(filtered_daily['ewma_aus'], label='Australia')
 plt.plot(filtered_daily['ewma_nz'], label='New Zealand')
 # We fill between to show the freezer, but only from 2020 for reliability
-fill_in = filtered_daily.loc[filtered_daily.index > '2020-01-01']
+fill_in = filtered_daily.loc[filtered_daily.index > '2020-04-01']
 
 plt.fill_between(x = fill_in.index, y1 = fill_in['ewma_aus'], y2 = fill_in['ewma_nz'], color = '#87c7ff')
 
