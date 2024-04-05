@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib import dates
 import numpy as np
+import datetime
 
 # Read the JSON file into a Pandas DataFrame
 aus = pd.read_json('data/sentiment/aus.json')
@@ -49,8 +50,8 @@ plt.plot(filtered_daily['ewma_aus'], label='Australia')
 #     plt.annotate(f'Event {event}', (date_num, filtered_daily.loc[date, 'ewma_aus']), textcoords="offset points", xytext=(0,10), ha='center')
 
 # Independent COVID Inquiry
-plt.axvline(x=dates.datestr2num('01/04/2020'), color='gray', linestyle='-', linewidth=1, label='_nolegend_')
-plt.annotate(text = 'COVID-19 Inquiry', xy = (dates.datestr2num('01/04/2020') - 370, -0.17), alpha = 0.9, fontsize=9)
+plt.axvline(x=dates.date2num(datetime.datetime.strptime('01/04/2020', "%d/%m/%Y")), color='gray', linestyle='-', linewidth=1, label='_nolegend_')
+plt.annotate(text = 'COVID-19 Inquiry', xy = (dates.date2num(datetime.datetime.strptime('01/04/2020', "%d/%m/%Y")) - 370, -0.17), alpha = 0.9, fontsize=9)
 
 # AUKUS Announced
 plt.axvline(x=dates.datestr2num('16/09/2021'), color='gray', linestyle='-', linewidth=1, label='_nolegend_')
